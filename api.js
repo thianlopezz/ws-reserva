@@ -9,8 +9,8 @@ var pasajeros = require('../../_Models/pasajero');
 var paises = require('../../_Models/pais');
 var adicionales = require('../../_Models/adicional');
 var reservas = require('../../_Models/reserva');
-var formas = require('../../_Models/formapago');
-var pagos = require('../../_Models/pago'); */
+var formas = require('../../_Models/formapago');*/
+var user = require('./Models/usuario'); 
 
 // declare axios for making http requests
 const axios = require('axios');
@@ -20,28 +20,16 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
-/* // Get all posts
-router.post('/auth/login', (req, res) => {
+ // Login
+router.get('/login/:usuario/:contra', (req, res) => {
 
-  auth.logIn(req.body.username, req.body.password, res, function(result){
-
-      if(result.success){
-        var token = jwt.sign(result, config.secret, {
-                  expiresIn: "24h" // expires in 24 hours
-                });
-
-        result.usuario.token = token;
-
+  user.logIn(req.params.usuario, req.params.contra, res, function(result){	  
+	  
         res.json(result);
-      }
-      else{
-        res.json(result);
-      }
-
   });
 
 });
-
+/*
 //P A I S E S
 router.get('/paises/all/:param', (req, res) => {
 
