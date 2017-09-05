@@ -10,7 +10,7 @@ function libro() {
 		if(err)
 			res.send({ success: false, mensaje: new String(err)});
 		else
-			res.send({sucess: true, libros: result[0]});
+			res.send({success: true, libros: result[0]});
       });
     });
   };
