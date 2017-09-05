@@ -11,6 +11,7 @@ var adicionales = require('../../_Models/adicional');
 var reservas = require('../../_Models/reserva');
 var formas = require('../../_Models/formapago');*/
 var user = require('./Models/usuario'); 
+var libro = require('./Models/libro'); 
 
 // declare axios for making http requests
 const axios = require('axios');
@@ -29,13 +30,14 @@ router.get('/login/:usuario/:contra', (req, res) => {
   });
 
 });
-/*
-//P A I S E S
-router.get('/paises/all/:param', (req, res) => {
 
-  paises.get(req.params.param, res);
+//P A I S E S
+router.get('/libros/getLibros/:valor/:criterio', (req, res) => {
+
+  libro.getLibros(req.params.valor, req.params.criterio, res);
 });
 
+/*
 // B R O K E R
 router.use(function(req, res, next) {
 
