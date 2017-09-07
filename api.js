@@ -31,11 +31,27 @@ router.get('/login/:usuario/:contra', (req, res) => {
 
 });
 
-//P A I S E S
+//L I B R O S
 router.get('/libros/getLibros/:valor/:criterio', (req, res) => {
 
   libro.getLibros(req.params.valor, req.params.criterio, res);
 });
+
+router.get('/libros/prestamo/:libro/:usuario', (req, res) => {
+
+  libro.setPrestamo(req.params.libro, req.params.usuario, res);
+});
+
+router.get('/libros/estado/:libro/:usuario/:estado', (req, res) => {
+
+  libro.setEstado(req.params.libro, req.params.usuario, req.params.estado, res);
+});
+
+router.get('/libros/getMisLibros/:usuario', (req, res) => {
+
+  libro.getMisLibros(req.params.usuario, res);
+});
+
 
 /*
 // B R O K E R
