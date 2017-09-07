@@ -36,7 +36,10 @@ function libro() {
 		if(err)
 			res.send({ success: false, mensaje: new String(err)});
 		else
-			res.send({success: true});
+			if(result[0][0].respuesta == 0)
+				res.send({success: false, mensaje: result[0][0].mensaje});
+			else
+				res.send({success: true});
       });
     });
   };
