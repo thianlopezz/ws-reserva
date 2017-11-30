@@ -1,24 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-//modelos de base de datos
-/* var auth = require('../../_Models/auth');
-var habitaciones = require('../../_Models/habitacion');
-var aerolineas = require('../../_Models/aerolinea');
-var pasajeros = require('../../_Models/pasajero');
-var paises = require('../../_Models/pais');
-var adicionales = require('../../_Models/adicional');
-var reservas = require('../../_Models/reserva');
-var formas = require('../../_Models/formapago');*/
 var user = require('./Models/usuario'); 
-var libro = require('./Models/libro'); 
+var libro = require('./Models/libro');
 
-// declare axios for making http requests
-const axios = require('axios');
+var chocolatada = require('./Models/chocolatada');
 
-/* GET api listing. */
 router.get('/', (req, res) => {
-  res.send('api works');
+  res.send('api works! motherfuckers!');
 });
 
  // Login
@@ -52,6 +41,12 @@ router.get('/libros/getMisLibros/:usuario', (req, res) => {
   libro.getMisLibros(req.params.usuario, res);
 });
 
+//C H O C O L A T A D A
+
+router.get('/chocolatada/prefunta/:idpregunta', (req, res) => {
+
+  chocolatada.setPregunta(req.params.idpregunta, res);
+});
 
 /*
 // B R O K E R
