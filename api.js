@@ -43,7 +43,7 @@ router.get('/libros/getMisLibros/:usuario', (req, res) => {
 
 //C H O C O L A T A D A
 
-router.get('/chocolatada/prefunta/:idpregunta', (req, res) => {
+router.get('/chocolatada/pregunta/:idpregunta', (req, res) => {
 
   chocolatada.setPregunta(req.params.idpregunta, res);
 });
