@@ -43,9 +43,17 @@ router.get('/libros/getMisLibros/:usuario', (req, res) => {
 
 //C H O C O L A T A D A
 
-router.get('/chocolatada/pregunta/:idpregunta', (req, res) => {
+router.get('/chocolatada/setpregunta/:idpregunta', (req, res) => {
 
   chocolatada.setPregunta(req.params.idpregunta, res);
+});
+router.get('/chocolatada/getpregunta/', (req, res) => {
+
+  chocolatada.getPregunta(req.params.idpregunta, res);
+});
+router.get('/chocolatada/activa/:idpregunta', (req, res) => {
+
+  chocolatada.activaPregunta(req.params.idpregunta, res);
 });
 
 /*

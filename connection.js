@@ -2,15 +2,15 @@ var mysql = require('mysql');
 
 function Connection() {
   this.pool = null;
-
+// JAWS COHORS
   this.init = function() {
     this.pool = mysql.createPool({
       connectionLimit: 5,
-      host: 'uc13jynhmkss3nve.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+      host: 'iwqrvsv8e5fz4uni.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
       port:3306,
-      user: 'aowzlb4xdjeq4681',
-      password: 'mdznv8y5dlds55r1',
-      database: 'eu1z7sd3vgt4unee'
+      user: 's7jhnvw1ypb8udws',
+      password: 'i453rtdb4gj8x50v',
+      database: 'u6zkl08qttwwdi8r'
     });
   };
 
